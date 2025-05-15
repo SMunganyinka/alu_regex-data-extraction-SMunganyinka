@@ -19,7 +19,7 @@ This project extracts the following data patterns from a large text string:
 
 ## 📁 Project Structure
 
-alu_regex-data-extraction-shakira/
+alu_regex-data-extraction-SMunganyinka/
 ├── regex_extract.py # Main Python script for regex extractions
 ├── README.md # Project documentation
 
