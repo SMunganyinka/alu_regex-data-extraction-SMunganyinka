@@ -43,6 +43,8 @@ python3 regex_extract.py
 View the output:
 The extracted data will be printed in the terminal under relevant categories.
 
+---
+
 🧪 Example Output
 
 Emails: ['user@example.com', 'firstname.lastname@company.co.uk']
@@ -52,6 +54,9 @@ Credit Card Numbers: ['1234 5678 9012 3456', '1234-5678-9012-3456']
 Hashtags: ['#example', '#ThisIsAHashtag']
 24-Hour Times: ['14:30', '07:00']
 12-Hour Times: ['2:30 PM', '12:15 am']
+
+---
+
 ✅ Regex Patterns Used
 Type	Regex Pattern
 Email	\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-zA-Z]{2,}\b
@@ -61,6 +66,8 @@ Credit Card	\b(?:\d{4}[- ]?){3}\d{4}\b
 Hashtag	#\w+
 Time (24-hour)	`\b(?:[01]?\d
 Time (12-hour)	`\b(1[0-2]
+
+---
 
 📬 Contact
 Shakira
