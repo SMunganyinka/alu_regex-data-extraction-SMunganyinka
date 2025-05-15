@@ -13,13 +13,13 @@ Wake-up time is 07:00.
 Event starts at 12:15 am.
 """
 
-# Regular Expressions
-email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+# Improved Regular Expressions
+email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-zA-Z]{2,}\b'
 url_pattern = r'https?://[^\s]+'
-phone_pattern = r'(\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4})'
+phone_pattern = r'\b\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b'
 credit_card_pattern = r'\b(?:\d{4}[- ]?){3}\d{4}\b'
 hashtag_pattern = r'#\w+'
-time_24hr_pattern = r'\b([01]?\d|2[0-3]):[0-5]\d\b'
+time_24hr_pattern = r'\b(?:[01]?\d|2[0-3]):[0-5]\d\b'
 time_12hr_pattern = r'\b(1[0-2]|0?[1-9]):[0-5]\d\s?(AM|PM|am|pm)\b'
 
 # Finding matches
@@ -37,5 +37,5 @@ print("URLs:", urls)
 print("Phone Numbers:", phones)
 print("Credit Card Numbers:", credit_cards)
 print("Hashtags:", hashtags)
-print("24-Hour Times:", [match for match in times_24hr if match])  # filter non-empty
-print("12-Hour Times:", ['{} {}'.format(hour, meridiem) for hour, meridiem in times_12hr])
+print("24-Hour Times:", times_24hr)
+print("12-Hour Times:", [f"{hour}:{minute} {meridiem}" for hour, minute, meridiem in re.findall(r'(1[0-2]|0?[1-9]):([0-5]\d)\s?(AM|PM|am|pm)', text)])
